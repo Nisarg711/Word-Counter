@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <link rel="stylesheet" crossorigin href="/assets/index-D6WUy6h5.css">
+</head>
+<body>
+    <h1>Word Counter</h1>
+    <div class="heading"><h2>Enter the text in the following field to count words:</h2></div>
+    
+        <textarea name="input" id="input" placeholder="Start Writing from here" class="container"></textarea>
+        <button class="button">COUNT</button>
+         
+
+         <div class="count"><ul>
+            <li><b>No. of Words: <span class="value">0</span> </b></li>
+            <li> <b>No. of Characters: <span class="valuech">0</span></b>     </li>
+         </ul>
+         </div>
+         <script>
+            btn=document.querySelector('.button');
+            btn.addEventListener("click",()=>{
+                input=document.querySelector('.container');
+                words=input.value;
+                document.querySelector('.valuech').innerHTML=words.length;
+                words_trimmed=words.replace(/\s+/g," ").trim();
+                word_arr=words_trimmed.split(" ");
+                if(word_arr[0]=="")
+                {
+                    document.querySelector('.value').innerHTML=0;
+                    
+                }
+                else
+                document.querySelector('.value').innerHTML=word_arr.length;
+                
+            })</script>
+</body>
+</html>
